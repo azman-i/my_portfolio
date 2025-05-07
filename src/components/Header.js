@@ -1,7 +1,19 @@
-import React from 'react';
-import { Github, Linkedin, Mail, FileText, Award } from 'lucide-react';
+import React, { useState } from 'react';
+
+import { Github, Linkedin, Mail, FileText, Award ,Menu, X } from 'lucide-react';
 
 function Header({ name, title, image, links }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle mobile menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.classList.add('menu-is-active');
+    } else {
+      document.body.classList.remove('menu-is-active');
+    }
+  };
   // Function to render the appropriate icon based on link name
   const renderIcon = (linkName) => {
     switch(linkName.toLowerCase()) {
@@ -21,6 +33,24 @@ function Header({ name, title, image, links }) {
   };
 
   return (
+    <>
+    <nav className="navbar">
+        <div className="navbar-brand">
+          <span className="navbar-name">{name}</span>
+        </div>
+        
+        {/* Mobile menu button */}
+        <button className="mobile-menu-button" onClick={toggleMenu} aria-label="Toggle menu">
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+        
+        {/* Desktop and Mobile menu */}
+        <div className={`navbar-menu ${isMenuOpen ? 'is-active' : ''}`}>
+          <a href="#research" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Research</a>
+          <a href="#publications" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Publications</a>
+          <a href="#services" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Services</a>
+        </div>
+      </nav>
     <header id="header">
       <div className="profile-image-container">
         <img src={image} alt="Profile Picture" className="profile-image" />
@@ -45,6 +75,7 @@ function Header({ name, title, image, links }) {
         </div>
       </div>
     </header>
+    </>
   );
 }
 

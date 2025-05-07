@@ -25,9 +25,14 @@ function App() {
     },
    biography: {
       paragraphs: [
-        "I am a incoming PhD student in Computer Science at abcd uni. My research focuses on the intersection of large language models and software engineering. I am interested in making the outputs of large language models reliable and trustworthy. I am currently working  under the supervision of professor shibbir ahmed.",
-        "Prior to my PhD, I completed my BSc in Computer Science and Engineering at Bangladesh University of Engineering and Technology. My undergraduate thesis on determining protein protein interaction in a combinatorial way. I am passionate about large language models and its future effects on software engineering. My goal is to provide reliable and trustworthy solution to large language model"
+        "I am an incoming Ph.D. student in Computer Science at ABCD University, where I am working under the supervision of Professor Shibbir Ahmed. My research lies at the intersection of large language models (LLMs) and software engineering, with a particular focus on improving the reliability and trustworthiness of LLM outputs.",
+
+        "Before beginning my Ph.D., I completed my B.Sc. in Computer Science and Engineering at Bangladesh University of Engineering and Technology (BUET). My undergraduate thesis focused on determining protein-protein interactions using a combinatorial approach.",
+
+        "I am deeply passionate about the future of large language models and their potential to transform software engineering. My goal is to develop methods that ensure LLMs produce reliable and verifiable results, enabling their safe and effective application in real-world systems."
+
       ]
+      
     },
     publications: [
       {
