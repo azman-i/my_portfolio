@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { Award, GraduationCap, FileText, Building } from 'lucide-react';
-
+import { 
+  GraduationCap, 
+  Briefcase, 
+  TrendingUp, 
+  Building, 
+  Award, 
+  School 
+} from 'lucide-react';
 function RecentNewsSection({ newsItems = [] }) {
   const [expanded, setExpanded] = useState(false);
   
@@ -11,16 +17,29 @@ function RecentNewsSection({ newsItems = [] }) {
   // Map icon types to components
   const getIcon = (iconType) => {
     switch(iconType) {
-      case 'award':
-        return <Award size={20} color="#F59E0B" />;
-      case 'education':
-        return <GraduationCap size={20} color="#10B981" />;
+      case 'Award':
+        return <Award size={20} color="#F59E0B" />; // Amber
+      case 'Graduation':
+        return <GraduationCap size={20} color="#10B981" />; // Emerald
       case 'university':
-        return <Building size={20} color="#3B82F6" />;
-      case 'publication':
-        return <FileText size={20} color="#8B5CF6" />;
+        return <Building size={20} color="#3B82F6" />; // Blue
+      
+      case 'Job':
+        return <Briefcase size={20} color="#EF4444" />; // Red
+      case 'Promotion':
+        return <TrendingUp size={20} color="#EC4899" />; // Pink
+      case 'PhD':
+        return <School size={20} color="#6366F1" />; // Indigo
+      // case 'achievement':
+      //   return <Medal size={20} color="#F97316" />; // Orange
+      // case 'research':
+      //   return <BookOpen size={20} color="#14B8A6" />; // Teal  
+      // case 'honor':
+      //   return <Star size={20} color="#FBBF24" />; // Yellow
+      // case 'highlight':
+      //   return <Flame size={20} color="#DC2626" />; // Red
       default:
-        return <Award size={20} color="#6B7280" />;
+        return <Award size={20} color="#6B7280" />; // Gray
     }
   };
 

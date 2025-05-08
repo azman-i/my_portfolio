@@ -1,0 +1,116 @@
+.social-icon {
+  transition: all 0.3s ease;
+  color: #4a5568;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Specific icon colors */
+.github-icon .social-icon {
+  color: #333;
+}
+
+.linkedin-icon .social-icon {
+  color: #0077b5;
+}
+
+.email-icon .social-icon {
+  color: #ea4335;
+}
+
+.google-scholar-icon .google-scholar-icon-svg {
+  color: #4285f4;
+}
+
+/* Hover effects with brighter colors */
+.github-icon:hover .social-icon {
+  color: #24292e;
+}
+
+.linkedin-icon:hover .social-icon {
+  color: #0a66c2;
+}
+
+.email-icon:hover .social-icon {
+  color: #d93025;
+}
+
+.google-scholar-icon:hover .google-scholar-icon-svg {
+  color: #1a73e8;
+}
+
+/* Add a subtle background effect on hover */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.icon-link:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure proper spacing between icons and responsive layout */
+.social-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Resume link styling */
+.resume-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #4285f4;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.resume-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #4285f4;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.resume-link:hover {
+  color: #1a73e8;
+}
+
+.resume-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .social-links {
+    gap: 6px;
+  }
+  
+  .icon-link {
+    padding: 4px;
+  }
+
+  .resume-link {
+    font-size: 0.9em;
+  }
+} 

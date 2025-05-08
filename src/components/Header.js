@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
-import { Github, Linkedin, Mail, FileText, Award ,Menu, X } from 'lucide-react';
+import { Home,Github, Linkedin, Mail, Menu, X, GraduationCap } from 'lucide-react';
+import './Header.css';
 
 function Header({ name, title, image, links }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,29 +14,57 @@ function Header({ name, title, image, links }) {
       document.body.classList.remove('menu-is-active');
     }
   };
-  // Function to render the appropriate icon based on link name
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.classList.remove('menu-is-active');
+  };
+
+  // Function to render the appropriate icon with enhanced styling
   const renderIcon = (linkName) => {
+    const iconStyle = {
+      size: 20,
+      strokeWidth: 2,
+      className: 'social-icon'
+    };
+
     switch(linkName.toLowerCase()) {
       case 'github':
-        return <Github size={20} />;
+        return <Github {...iconStyle} />;
       case 'linkedin':
-        return <Linkedin size={20} />;
+        return <Linkedin {...iconStyle} />;
       case 'email':
-        return <Mail size={20} />;
-      case 'cv':
-        return <FileText size={20} />;
+        return <Mail {...iconStyle} />;
+        case 'home':
+          return <Home {...iconStyle} />;
       case 'google scholar':
-        return <Award size={20} />;
+        return (
+          <svg 
+            className="google-scholar-icon-svg" 
+            viewBox="0 0 24 24" 
+            width="20" 
+            height="20"
+            fill="currentColor"
+          >
+            <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+          </svg>
+        );
+      case 'phd':
+        return <GraduationCap {...iconStyle} />;
       default:
         return null;
     }
   };
+
+  // Find CV link from the links array
+  const cvLink = links.find(link => link.name.toLowerCase() === 'cv');
 
   return (
     <>
     <nav className="navbar">
         <div className="navbar-brand">
           <span className="navbar-name">{name}</span>
+          
+
         </div>
         
         {/* Mobile menu button */}
@@ -46,9 +74,9 @@ function Header({ name, title, image, links }) {
         
         {/* Desktop and Mobile menu */}
         <div className={`navbar-menu ${isMenuOpen ? 'is-active' : ''}`}>
-          <a href="#research" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Research</a>
-          <a href="#publications" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Publications</a>
-          <a href="#services" className="navbar-item" onClick={() => setIsMenuOpen(false)}>Services</a>
+          <a href="#research" className="navbar-item" onClick={() => closeMenu()}>Research</a>
+          <a href="#publications" className="navbar-item" onClick={() => closeMenu(false)}>Publications</a>
+          <a href="#services" className="navbar-item" onClick={() => closeMenu(false)}>Services</a>
         </div>
       </nav>
     <header id="header">
@@ -57,9 +85,16 @@ function Header({ name, title, image, links }) {
       </div>
       <div className="profile-info">
         <h1 className="profile-name">{name}</h1>
-        <p className="profile-title">{title}</p>
+       
+        <div className="profile-position">
+        
+          <p className="position-line">Doctoral Instructional Assistant</p>
+          <p className="position-department">Department of Computer Science</p>
+          <p className="institution-line">Texas State University</p>
+        </div>
+        
         <div className="social-links">
-          {links.map((link, index) => (
+        {links.filter(link => link.name.toLowerCase() !== 'cv').map((link, index) => (
             <a 
               key={index} 
               href={link.url} 
@@ -73,6 +108,16 @@ function Header({ name, title, image, links }) {
             </a>
           ))}
         </div>
+        {cvLink && (
+          <a 
+            href={cvLink.url}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="resume-link"
+          >
+            View Resume
+          </a>
+        )}
       </div>
     </header>
     </>

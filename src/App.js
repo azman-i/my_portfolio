@@ -25,7 +25,7 @@ function App() {
     },
    biography: {
       paragraphs: [
-        "I am an incoming Ph.D. student in Computer Science at ABCD University, where I am working under the supervision of Professor Shibbir Ahmed. My research lies at the intersection of large language models (LLMs) and software engineering, with a particular focus on improving the reliability and trustworthiness of LLM outputs.",
+        "I am an incoming Ph.D. student in Computer Science at Texas State University , where I am working under the supervision of Dr Shibbir Ahmed . My research lies at the intersection of large language models (LLMs) and software engineering, with a particular focus on improving the reliability and trustworthiness of LLM outputs.",
 
         "Before beginning my Ph.D., I completed my B.Sc. in Computer Science and Engineering at Bangladesh University of Engineering and Technology (BUET). My undergraduate thesis focused on determining protein-protein interactions using a combinatorial approach.",
 
@@ -70,21 +70,37 @@ function App() {
     ],
     newsData : [
       {
-        date: "August 2024",
-        content: "Joined as an Assistant Professor in the Department of Computer Science at Texas State University!",
-        iconType: "university"
+        date: "August 2025",
+        content: "Started as a Doctoral Instructional Assistant at Texas State University.",
+        iconType: "PhD"
       },
       {
-        date: "June 2024",
-        content: "Defended my PhD Final Oral Exam!",
-        iconType: "education"
+        date: "February 2025",
+        content: "Received full funding for PhD admission at Texas State University.",
+        iconType: "Award"
       },
       {
-        date: "May 2024",
-        content: "Awarded Research Excellence Award by Iowa State University!",
-        iconType: "award"
+        date: "July 2023",
+        content: "Joined Teletalk Bangladesh Limited as an Assistant Manager.",
+        iconType: "Job"
+      },
+      {
+        date: "May 2022",
+        content: "Promoted to Software Engineer at Reve Systems.",
+        iconType: "Promotion"
+      },
+      {
+        date: "April 2021",
+        content: "Joined Reve Systems as a Junior Software Engineer.",
+        iconType: "Job"
+      },
+      {
+        date: "February 2021",
+        content: "Graduated with a BSc in Computer Science and Engineering from Bangladesh University of Engineering and Technology.",
+        iconType: "Graduation"
       }
     ]
+    
   };
 
   return (
