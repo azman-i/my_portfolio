@@ -4,7 +4,7 @@ import './Header.css';
 
 function Header({ name, title, image, links }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  console.log(image);
   // Function to toggle mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

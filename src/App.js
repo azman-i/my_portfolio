@@ -14,7 +14,7 @@ function App() {
     profile: {
       name: "Khairul Azman",
       title: "Incoming PhD Student",
-      image: "profile_photo.jpg", // Place your image in the public folder
+      image: "my_portfolio/profile_photo.jpg", // Place your image in the public folder
       links: [
         { name: "GitHub", url: "https://github.com/azman-i/" },
         { name: "LinkedIn", url: "https://www.linkedin.com/in/khairul-azman-376bb8181/" },
@@ -25,7 +25,7 @@ function App() {
     },
    biography: {
       paragraphs: [
-        "I am an incoming Ph.D. student in Computer Science at Texas State University , where I am working under the supervision of Dr Shibbir Ahmed . My research lies at the intersection of large language models (LLMs) and software engineering, with a particular focus on improving the reliability and trustworthiness of LLM outputs.",
+        "I am an incoming Ph.D. student in Computer Science at Texas State University . My research lies at the intersection of large language models (LLMs) and software engineering, with a particular focus on improving the reliability and trustworthiness of LLM outputs.",
 
         "Before beginning my Ph.D., I completed my B.Sc. in Computer Science and Engineering at Bangladesh University of Engineering and Technology (BUET). My undergraduate thesis focused on determining protein-protein interactions using a combinatorial approach.",
 
@@ -116,8 +116,7 @@ function App() {
 
         <Biography paragraphs={portfolioData.biography.paragraphs} />
         <RecentNewsSection newsItems={portfolioData.newsData} />
-        <Publications publications={portfolioData.publications} />
-        <Teaching teachings={portfolioData.teaching} />
+        
         <Footer name={portfolioData.profile.name} />
       </div>
     </div>
