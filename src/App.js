@@ -14,7 +14,7 @@ function App() {
     profile: {
       name: "Khairul Azman",
       title: "Incoming PhD Student",
-      image: "my_portfolio/profile_photo.jpg", // Place your image in the public folder
+      image: "profile_photo.jpg", // Place your image in the public folder
       links: [
         { name: "GitHub", url: "https://github.com/azman-i/" },
         { name: "LinkedIn", url: "https://www.linkedin.com/in/khairul-azman-376bb8181/" },
