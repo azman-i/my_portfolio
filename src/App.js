@@ -7,6 +7,7 @@ import Publications from './components/Publications';
 import Teaching from './components/Teaching';
 import Footer from './components/Footer';
 import RecentNewsSection from './components/RecentNews';
+import Services from './components/Services';
 
 function App() {
   // Portfolio data - you can later move this to separate files or fetch from an API
@@ -35,37 +36,38 @@ function App() {
       
     },
     publications: [
+      
       {
-        title: "Title of Your First Publication",
-        authors: "Your Name, Co-author One, Co-author Two",
-        venue: "Conference/Journal Name, Year",
-        description: "Brief description of the publication and its contributions to the field.",
+        title: "A heuristic computational approach for global protein protein alignment of multiple biological networks",
+        authors: "Khairul Azman, Quazi Asif Sadmine, Shahibur Rahman, Abul kashem Mia",
+        venue: "Undergraduate Thesis, BUET, 2021",
+"description": "Collaborated with two teammates under Professor Dr. Abul Kashem Mia to tackle the NP-Hard problem of global protein-protein interactions using a heuristic approach. Optimized MAPPIN algorithm, integrated Dago-Fun and NaviGo for functional similarity, and replaced BLAST with MMseqs2, reducing runtime from 39 to 3 minutes.",  
         links: [
           { name: "PDF", url: "#" },
           { name: "Code", url: "#" }
         ]
       },
-      {
-        title: "Title of Your Second Publication",
-        authors: "Your Name, Co-author One, Co-author Two",
-        venue: "Conference/Journal Name, Year",
-        description: "Brief description of the publication and its contributions to the field.",
-        links: [
-          { name: "PDF", url: "#" },
-          { name: "Code", url: "#" }
-        ]
-      }
+      // {
+      //   title: "Title of Your Second Publication",
+      //   authors: "Your Name, Co-author One, Co-author Two",
+      //   venue: "Conference/Journal Name, Year",
+      //   description: "Brief description of the publication and its contributions to the field.",
+      //   links: [
+      //     { name: "PDF", url: "#" },
+      //     { name: "Code", url: "#" }
+      //   ]
+      // }
     ],
     teaching: [
       {
-        title: "Course Name",
-        institution: "University Name, Semester Year",
-        description: "Description of your role and responsibilities in this course. What did you teach? How did you contribute to student learning?"
+        title: "Computer System Fundamentals| CS3360",
+        institution: "Texas State University, Fall 2025",
+        description: "Responsible for grading projects and assignments, and providing student support during office hours (two sessions per week, two hours each)."
       },
       {
-        title: "Another Course Name",
-        institution: "University Name, Semester Year",
-        description: "Description of your role and responsibilities in this course. What did you teach? How did you contribute to student learning?"
+        title: "Operating Systems | CS 4460",
+        institution: "Texas State University, Fall 2025",
+        description: "Responsible for grading projects and assignments, and providing student support during office hours (two sessions per week, two hours each)."
       }
     ],
     newsData : [
@@ -99,7 +101,25 @@ function App() {
         content: "Graduated with a BSc in Computer Science and Engineering from Bangladesh University of Engineering and Technology.",
         iconType: "Graduation"
       }
-    ]
+    ],
+    services: [
+      {
+        section: "Sports & Fitness",
+        description: "Play football and cricket regularly with friends, which helps me stay disciplined and enjoy teamwork."
+      },
+      {
+        section: "Cultural Participation",
+        description: "Performed in annual cultural evenings at university."
+      },
+      {
+        section: "Community Support",
+        description: "Assisted in organizing local events and university programs."
+      },
+      {
+        section: "Personal Learning",
+        description: "Take part in online programming challenges to sharpen problem-solving skills."
+      }
+    ],
     
   };
 
@@ -116,8 +136,11 @@ function App() {
 
         <Biography paragraphs={portfolioData.biography.paragraphs} />
         <RecentNewsSection newsItems={portfolioData.newsData} />
-        
-        <Footer name={portfolioData.profile.name} />
+
+        <Publications publications={portfolioData.publications} />
+        <Teaching teachings={portfolioData.teaching} />
+       <Services services={portfolioData.services} />
+    <Footer name={portfolioData.profile.name} />
       </div>
     </div>
   );

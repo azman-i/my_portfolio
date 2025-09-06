@@ -75,7 +75,7 @@ function Header({ name, title, image, links }) {
         {/* Desktop and Mobile menu */}
         <div className={`navbar-menu ${isMenuOpen ? 'is-active' : ''}`}>
           <a href="#research" className="navbar-item" onClick={() => closeMenu()}>Research</a>
-          <a href="#publications" className="navbar-item" onClick={() => closeMenu(false)}>Publications</a>
+          <a href="#teaching" className="navbar-item" onClick={() => closeMenu(false)}>Teaching</a>
           <a href="#services" className="navbar-item" onClick={() => closeMenu(false)}>Services</a>
         </div>
       </nav>

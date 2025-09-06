@@ -3,7 +3,8 @@ import React from 'react';
 
 function Publications({ publications }) {
   return (
-    <section id="publications">
+    <section id="research">
+
       <h2 className="section-title">Publications</h2>
       
       {publications.map((pub, index) => (
